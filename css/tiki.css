@@ -1,0 +1,49 @@
+#main {
+	font-family: Helvetica;
+	width: 400px;
+	margin: 60px auto;
+}
+#head div {
+	float: right;
+	text-align: right;
+	font-size: 0.8em;
+}
+a {
+	text-decoration: none;
+	color: #000;
+}
+label {
+	font-size: 0.8em;
+	display: block;
+	width: 70px;
+}
+legend {
+	font-weight: bold;
+}
+input, textarea {
+	width: 100%;
+	margin-bottom: 1em;
+}
+input.submit {
+	width: auto;
+	float: right;
+	font-weight: bold;
+}
+div.note {
+	border-top: 2px dashed #bbb;
+	padding: 0.3em 1em;
+	background-color: #FFFFA0;
+	margin-bottom: 1em;
+}
+div.note .tags {
+	font-size: 0.6em;
+	font-style: italic;
+	color: #333;
+}
+div.note .tags > a {
+	color: #333;
+}
+h3.tags a span {
+	color: #f00;
+	font-size: 0.8em;
+}

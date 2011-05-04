@@ -1,0 +1,50 @@
+<html>
+<head>
+	<title>Notes</title>
+	<link rel="stylesheet" type="text/css" href="css/tiki.css" />
+	<script type="text/javascript" src="scripts/jquery.min.js"></script> 
+	<script type="text/javascript" src="scripts/underscore-min.js"></script> 
+	<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.templates/beta1/jquery.tmpl.js"></script>
+	<script type="text/javascript" src="scripts/tiki.js"></script>
+</head>
+<body>
+	<div id="main">
+		<div id="head">	
+			<div>
+				<a id="new-note-link" href="#"> new note</a>
+			</div>
+			<a href="/" id="index-link"><h1>Notes</h1></a>
+		</div>
+		<div>
+			<div id="index">
+				<div id="tags"></div>
+				<div id="notes"></div>
+			</div>
+			<div id="new" style="display:none">
+				<fieldset>
+				<legend>New note</legend>
+				<form id="new-note" action="/new" method="post">
+					<label>Contents:</label>
+					<textarea id="note-content" name="contents"></textarea>
+					<label>Tags:</label>
+					<input id="note-tags" type="text" name="tags" />
+					<input type="submit" value="Save" class="submit" />
+				</form>
+				</fieldset>    
+			</div>
+		</div>
+	</div>
+
+	<script id="noteTemplate" type="text/x-jquery-tmpl">
+		<div class="note">
+			<div class="tags">
+				{{tmpl(tags) "#tagLinkTemplate"}}
+			</div>
+			<pre>${note}</pre>
+		</div>
+	</script>
+	<script id="tagLinkTemplate" type="text/x-jquery-tmpl">
+		<a class="tag" href="#">${tag}</a>
+	</script>
+</body>
+</html>
