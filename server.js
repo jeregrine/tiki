@@ -4,7 +4,7 @@ var express = require('express'),
     redis = require('redis'),
     client = redis.createClient(),
     _ = require('underscore'),
-    logger = require("./utility/cloudlog").createLogger("4dc1b7d03390e4.91573253");
+    logger = require("./utility/cloudlog").createLogger("4dc1b7d03390e4.91573253");//Remove this line and all logger lines. This is for fun.
 
 app.configure('development', function(){
     app.use(express.static(__dirname + '/'));
@@ -33,7 +33,6 @@ app.post("/new", function(req, res){
 	var tags = req.body.tags.split(","),
 	    newNote =  {note: req.body.note, tags: tags};
 	client.incr("node-counter", function(err, newId){
-		console.log(newId);
 		client.set("note-"+newId, JSON.stringify(newNote));
 		client.sadd("all-notes", newId, function(){
 			client.smembers("all-notes", redis.print);

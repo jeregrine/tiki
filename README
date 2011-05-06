@@ -1,0 +1,5 @@
+Simple note taking app I called tiki. Its heavily based on https://gist.github.com/86714 but ajax based and less elegant.
+
+This was prepared for a class and the Logger class was using my buddy's service that handled logging.
+
+Enjoy!

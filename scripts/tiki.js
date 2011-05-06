@@ -42,7 +42,7 @@ notes = function (){
 			return _.map(data, function(note) { 
 				var json = JSON.parse(note);
 				json.tags = _.map(json.tags, function(tag){
-					return {tag: tag.trim()};
+					return {tag: tag};
 				});
 				return json;
 			});
